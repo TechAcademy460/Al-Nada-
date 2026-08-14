@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الندي للسجاد | الموقع الرسمي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #052b47;
+            --secondary: #1cc6d6;
+            --white: #ffffff;
+            --light-gray: #f4f6f9;
+            --dark-text: #1a1a1a;
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --shadow-hover: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { background: var(--light-gray); color: var(--dark-text); scroll-behavior: smooth; }
+        a { text-decoration: none; }
+
+        nav {
+            position: fixed; top: 0; width: 100%; background: var(--primary);
+            padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000; box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+            border-bottom: 3px solid var(--secondary);
+        }
+        .logo { font-size: 20px; font-weight: 900; color: var(--white); display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--secondary); font-size: 18px; }
+        .logo span { color: var(--secondary); }
+
+        .nav-links { display: flex; gap: 12px; align-items: center; }
+        .nav-links a { color: #d0e6f2; font-weight: 600; transition: 0.3s; font-size: 13px; }
+        .nav-links a:hover { color: var(--secondary); }
+
+        .hero {
+            height: 80vh; margin-top: 55px;
+            background: linear-gradient(rgba(5, 43, 71, 0.8), rgba(28, 198, 214, 0.3)),
+                        url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1600&auto=format&fit=crop');
+            background-size: cover; background-position: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: var(--white); padding: 0 15px;
+        }
+        .hero h1 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
+        .hero h1 span { color: var(--secondary); }
+        .hero p { font-size: 15px; max-width: 100%; margin: 0 auto 20px; line-height: 1.6; color: #e0f0f5; }
+        .btn-main { background: var(--secondary); padding: 10px 30px; border-radius: 50px; color: var(--primary); font-weight: 900; transition: 0.3s; display: inline-block; box-shadow: 0 5px 20px rgba(28, 198, 214, 0.4); }
+        .btn-main:hover { transform: scale(1.05); background: var(--white); }
+
+        .banner-promo { background: var(--primary); color: var(--secondary); padding: 10px; text-align: center; font-weight: bold; font-size: 14px; border-bottom: 2px solid var(--secondary); }
+        
+        .sec-title { text-align: center; padding: 30px 10px; }
+        .sec-title h2 { font-size: 28px; color: var(--primary); font-weight: 900; }
+        .sec-title h2 span { color: var(--secondary); }
+        .sec-title p { color: #666; font-size: 14px; margin-top: 6px; }
+
+        .rug-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .p-card {
+            background: var(--white); border-radius: 12px; overflow: hidden;
+            box-shadow: var(--shadow); transition: 0.3s;
+        }
+        .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .p-img { width: 100%; height: 180px; background-size: cover; background-position: center; }
+        .p-info { padding: 12px; text-align: center; }
+        .p-info h3 { color: var(--primary); margin-bottom: 6px; font-size: 16px; }
+        .p-info p { color: #777; font-size: 12px; }
+        .p-info .price { color: var(--secondary); font-size: 18px; font-weight: 900; }
+        .p-info .wa-btn { display: block; margin-top: 10px; background: #25D366; color: white; padding: 8px; border-radius: 30px; font-weight: bold; font-size: 13px; transition: 0.3s; }
+
+        .features { background: var(--primary); padding: 35px 15px; color: white; text-align: center; }
+        .feat-grid { max-width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .feat-item { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; transition: 0.3s; }
+        .feat-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+        .feat-item i { font-size: 30px; color: var(--secondary); margin-bottom: 10px; }
+        .feat-item h4 { font-size: 16px; margin-bottom: 6px; }
+        .feat-item p { color: #cce0eb; font-size: 12px; line-height: 1.5; }
+
+        .contact-final-section { background: var(--white); padding: 40px 15px 50px; text-align: center; border-top: 4px solid var(--secondary); }
+        .contact-final-section h2 { font-size: 28px; color: var(--primary); margin-bottom: 20px; }
+        .contact-final-section h2 span { color: var(--secondary); }
+        .social-final-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 100%; margin: 0 auto; }
+        .final-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 15px; color: white; transition: 0.3s; width: 100%; max-width: 280px; justify-content: center; }
+        .final-btn:hover { transform: translateY(-3px) scale(1.05); }
+        .final-btn.whatsapp { background: #25D366; }
+        .final-btn.facebook { background: #1877F2; }
+        .final-btn.instagram { background: #E1306C; }
+
+        footer { background: #020617; padding: 20px; text-align: center; color: #94a3b8; border-top: 5px solid var(--secondary); }
+        footer span { color: var(--secondary); font-weight: bold; }
+        footer p { font-size: 13px; }
+
+        @media (min-width: 600px) {
+            .rug-grid { grid-template-columns: repeat(3, 1fr); }
+            .feat-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 900px) {
+            .rug-grid { grid-template-columns: repeat(4, 1fr); }
+            .feat-grid { grid-template-columns: repeat(4, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fas fa-shield-halved"></i> معرض <span>الندي</span></div>
+        <div class="nav-links">
+            <a href="#home">الرئيسية</a>
+            <a href="#shop">السجاد</a>
+            <a href="#features">مميزاتنا</a>
+            <a href="#contact">تواصل</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="home">
+        <h1>معرض <span>الندي</span> للسجاد</h1>
+        <p>تشكيلة متجددة من أجود أنواع السجاد المبسوط على الأرضيات. اختر ما يناسب ذوقك.</p>
+        <a href="#shop" class="btn-main">تصفح التشكيلة</a>
+    </header>
+
+    <div class="banner-promo">
+        <i class="fas fa-bolt"></i> خصم 20% + شحن مجاني لباب المنزل + استبدال 14 يوم!
+    </div>
+
+    <section id="shop">
+        <div class="sec-title">
+            <h2>تشكيلة <span>الندي</span> المتجددة</h2>
+            <p>أكثر من 50 سجادة فاخرة تناسب جميع الأذواق</p>
+        </div>
+        <div class="rug-grid" id="rugContainer">
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="sec-title" style="color: white;">
+            <h2 style="color: white;">لماذا <span style="color: var(--secondary);">معرض الندي</span>؟</h2>
+        </div>
+        <div class="feat-grid">
+            <div class="feat-item"><i class="fas fa-truck-fast"></i><h4>شحن فوري</h4><p>توصيل سريع لباب المنزل.</p></div>
+            <div class="feat-item"><i class="fas fa-rotate-left"></i><h4>استبدال سهل</h4><p>إمكانية الاستبدال خلال 14 يوم.</p></div>
+            <div class="feat-item"><i class="fas fa-ruler-combined"></i><h4>مقاسات مخصصة</h4><p>نصنع السجاد حسب مقاس غرفتك.</p></div>
+        </div>
+    </section>
+
+    <section class="contact-final-section" id="contact">
+        <h2>تواصل مع <span>معرض الندي</span></h2>
+        <p style="color: #666; margin-bottom: 20px;">يسعدنا خدمتك عبر جميع قنوات التواصل</p>
+        <div class="social-final-icons">
+            <a href="https://api.whatsapp.com/send?phone=201002201639&text=أهلاً بكم في معرض الندي. أنا مهتم بالتواصل معكم." target="_blank" class="final-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب</a>
+            <a href="https://www.facebook.com" target="_blank" class="final-btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك</a>
+            <a href="https://www.instagram.com" target="_blank" class="final-btn instagram"><i class="fab fa-instagram"></i> إنستغرام</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة &copy; 2026 <span>معرض الندي للسجاد</span> | الجودة التي تلمسها على أرضك.</p>
+    </footer>
+
+    <script>
+        const container = document.getElementById('rugContainer');
+
+        // 50 سجادة
+        let rug1  = { name: "سجادة التاج الملكي", color: "بنفسجي غامق", size: "3x2 متر", price: 2850, img: "https://images.unsplash.com/photo-1600166898405-da9535204843?q=80&w=800&auto=format&fit=crop" };
+        let rug2  = { name: "سجادة اللاڤندر", color: "بنفسجي لافندر", size: "3.5x2.5 متر", price: 3800, img: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800&auto=format&fit=crop" };
+        let rug3  = { name: "سجادة القصر", color: "بنفسجي محروق", size: "3x4 متر", price: 4200, img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" };
+        let rug4  = { name: "سجادة قصر الذهب", color: "بيج ذهبي", size: "2.5x3.5 متر", price: 3200, img: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800&auto=format&fit=crop" };
+        let rug5  = { name: "سجادة نقاء الفضاء", color: "أوف وايت", size: "2x3 متر", price: 2270, img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop" };
+        let rug6  = { name: "سجادة الشفق", color: "بيج فاتح", size: "2.5x2.5 متر", price: 1950, img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f1?q=80&w=800&auto=format&fit=crop" };
+        let rug7  = { name: "سجادة المحيط", color: "أزرق زيتي", size: "2x3 متر", price: 2420, img: "https://images.unsplash.com/photo-1590264167088-e3b930657172?q=80&w=800&auto=format&fit=crop" };
+        let rug8  = { name: "سجادة الأمواج", color: "أزرق فيروزي", size: "2.5x3.5 متر", price: 3100, img: "https://images.unsplash.com/photo-1618219740975-f40978ba6518?q=80&w=800&auto=format&fit=crop" };
+        let rug9  = { name: "سجادة النيوترال", color: "رمادي بلاتيني", size: "2.5x2.5 متر", price: 1950, img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop" };
+        let rug10 = { name: "سجادة البندقية", color: "عنابي غامق", size: "3x4 متر", price: 4100, img: "https://images.unsplash.com/photo-1513166414261-5ed6ad2f34d8?q=80&w=800&auto=format&fit=crop" };
+        let rug11 = { name: "سجادة الوبر الناعم", color: "رمادي فضي", size: "3x2 متر", price: 2650, img: "https://images.unsplash.com/photo-1590606786545-1b77746da1cb?q=80&w=800&auto=format&fit=crop" };
+        let rug12 = { name: "سجادة الزهور", color: "بنفسجي فاتح", size: "2x3 متر", price: 2300, img: "https://images.unsplash.com/photo-1513611865821-b23dde3f3e7c?q=80&w=800&auto=format&fit=crop" };
+        let rug13 = { name: "سجادة العاج", color: "عاجي ذهبي", size: "3x3 متر", price: 4500, img: "https://images.unsplash.com/photo-1505693416388-b5ce068c8aea?q=80&w=800&auto=format&fit=crop" };
+        let rug14 = { name: "سجادة الليل الكلاسيكية", color: "أزرق ليلي", size: "3x4 متر", price: 3900, img: "https://images.unsplash.com/photo-1563217365-b51e2c7d788b?q=80&w=800&auto=format&fit=crop" };
+        let rug15 = { name: "سجادة الفضاء الرمادي", color: "رمادي داكن", size: "2.5x3.5 متر", price: 2800, img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" };
+        let rug16 = { name: "سجادة النخبة", color: "بيج ملكي", size: "3x3 متر", price: 5200, img: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800&auto=format&fit=crop" };
+        let rug17 = { name: "سجادة الأوراق", color: "أخضر زيتي", size: "2x3 متر", price: 2500, img: "https://images.unsplash.com/photo-1590264167088-e3b930657172?q=80&w=800&auto=format&fit=crop" };
+        let rug18 = { name: "سجادة القرمزي", color: "أحمر قرمزي", size: "3.5x2.5 متر", price: 4800, img: "https://images.unsplash.com/photo-1513166414261-5ed6ad2f34d8?q=80&w=800&auto=format&fit=crop" };
+        let rug19 = { name: "سجادة الباستيل", color: "أزرق سماوي", size: "2.5x3.5 متر", price: 3200, img: "https://images.unsplash.com/photo-1618219740975-f40978ba6518?q=80&w=800&auto=format&fit=crop" };
+        let rug20 = { name: "سجادة الواحة", color: "بيج رملي", size: "3x4 متر", price: 4100, img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f1?q=80&w=800&auto=format&fit=crop" };
+        let rug21 = { name: "سجادة الأميرة", color: "وردي فاتح", size: "2x3 متر", price: 2100, img: "https://images.unsplash.com/photo-1513611865821-b23dde3f3e7c?q=80&w=800&auto=format&fit=crop" };
+        let rug22 = { name: "سجادة الكلاسيك الذهبي", color: "ذهبي كلاسيكي", size: "3x4 متر", price: 4900, img: "https://images.unsplash.com/photo-1505693416388-b5ce068c8aea?q=80&w=800&auto=format&fit=crop" };
+        let rug23 = { name: "سجادة التوهج", color: "برتقالي محروق", size: "2.5x3.5 متر", price: 3300, img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop" };
+        let rug24 = { name: "سجادة الأحلام", color: "لافندر فاتح", size: "3x3 متر", price: 3600, img: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800&auto=format&fit=crop" };
+        let rug25 = { name: "سجادة السادة الأنيقة", color: "رمادي نيوترال", size: "2x3 متر", price: 2200, img: "https://images.unsplash.com/photo-1590606786545-1b77746da1cb?q=80&w=800&auto=format&fit=crop" };
+        let rug26 = { name: "سجادة القصر الملكي", color: "أحمر عنابي", size: "3.5x3 متر", price: 5300, img: "https://images.unsplash.com/photo-1513166414261-5ed6ad2f34d8?q=80&w=800&auto=format&fit=crop" };
+        let rug27 = { name: "سجادة البحيرة", color: "أزرق فيروزي", size: "3x4 متر", price: 4500, img: "https://images.unsplash.com/photo-1618219740975-f40978ba6518?q=80&w=800&auto=format&fit=crop" };
+        let rug28 = { name: "سجادة الهدوء", color: "رمادي فضي", size: "2.5x2.5 متر", price: 2600, img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" };
+        let rug29 = { name: "سجادة التراث", color: "بيج عاجي", size: "3x3 متر", price: 4800, img: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800&auto=format&fit=crop" };
+        let rug30 = { name: "سجادة الخريف", color: "بني محروق", size: "2x3 متر", price: 2400, img: "https://images.unsplash.com/photo-1563217365-b51e2c7d788b?q=80&w=800&auto=format&fit=crop" };
+        let rug31 = { name: "سجادة الشتاء", color: "أبيض ثلجي", size: "3.5x2.5 متر", price: 3900, img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop" };
+        let rug32 = { name: "سجادة الربيع", color: "أخضر نعناعي", size: "2.5x3.5 متر", price: 3100, img: "https://images.unsplash.com/photo-1590264167088-e3b930657172?q=80&w=800&auto=format&fit=crop" };
+        let rug33 = { name: "سجادة النور", color: "بيج مضيء", size: "3x3 متر", price: 4000, img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f1?q=80&w=800&auto=format&fit=crop" };
+        let rug34 = { name: "سجادة الفخامة", color: "ذهبي غامق", size: "3x4 متر", price: 5500, img: "https://images.unsplash.com/photo-1505693416388-b5ce068c8aea?q=80&w=800&auto=format&fit=crop" };
+        let rug35 = { name: "سجادة الزيتون", color: "أخضر زيتوني", size: "2x3 متر", price: 2900, img: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800&auto=format&fit=crop" };
+        let rug36 = { name: "سجادة المرجان", color: "أحمر مرجاني", size: "3.5x2.5 متر", price: 4100, img: "https://images.unsplash.com/photo-1513166414261-5ed6ad2f34d8?q=80&w=800&auto=format&fit=crop" };
+        let rug37 = { name: "سجادة المساء", color: "أزرق داكن", size: "3x4 متر", price: 4300, img: "https://images.unsplash.com/photo-1618219740975-f40978ba6518?q=80&w=800&auto=format&fit=crop" };
+        let rug38 = { name: "سجادة الفجر", color: "بيج ذهبي", size: "2x3 متر", price: 2200, img: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800&auto=format&fit=crop" };
+        let rug39 = { name: "سجادة البورسلين", color: "أبيض عاجي", size: "3x3 متر", price: 3800, img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop" };
+        let rug40 = { name: "سجادة الأندلس", color: "عنابي ذهبي", size: "3.5x3 متر", price: 5800, img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop" };
+        let rug41 = { name: "سجادة الريف", color: "أخضر غابي", size: "2.5x3.5 متر", price: 3400, img: "https://images.unsplash.com/photo-1590264167088-e3b930657172?q=80&w=800&auto=format&fit=crop" };
+        let rug42 = { name: "سجادة الغيوم", color: "رمادي فاتح", size: "3x4 متر", price: 4100, img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" };
+        let rug43 = { name: "سجادة اللؤلؤة", color: "أبيض لؤلؤي", size: "2x3 متر", price: 2700, img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f1?q=80&w=800&auto=format&fit=crop" };
+        let rug44 = { name: "سجادة الريف الذهبي", color: "بيج ذهبي", size: "3.5x2.5 متر", price: 5100, img: "https://images.unsplash.com/photo-1505693416388-b5ce068c8aea?q=80&w=800&auto=format&fit=crop" };
+        let rug45 = { name: "سجادة الماس", color: "رمادي ماسي", size: "3x3 متر", price: 4900, img: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800&auto=format&fit=crop" };
+        let rug46 = { name: "سجادة البنفسج الملكي", color: "بنفسجي ملكي", size: "2.5x3.5 متر", price: 3600, img: "https://images.unsplash.com/photo-1600166898405-da9535204843?q=80&w=800&auto=format&fit=crop" };
+        let rug47 = { name: "سجادة الصحراء", color: "بيج رملي", size: "3x4 متر", price: 4100, img: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800&auto=format&fit=crop" };
+        let rug48 = { name: "سجادة البحر الأبيض", color: "أبيض أزرق", size: "2x3 متر", price: 2600, img: "https://images.unsplash.com/photo-1590264167088-e3b930657172?q=80&w=800&auto=format&fit=crop" };
+        let rug49 = { name: "سجادة الصقيع", color: "رمادي أبيض", size: "3.5x2.5 متر", price: 3300, img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop" };
+        let rug50 = { name: "سجادة الطاووس", color: "أزرق ملكي", size: "3x3 متر", price: 4700, img: "https://images.unsplash.com/photo-1618219740975-f40978ba6518?q=80&w=800&auto=format&fit=crop" };
+
+        let allRugs = [
+            rug1, rug2, rug3, rug4, rug5, rug6, rug7, rug8, rug9, rug10,
+            rug11, rug12, rug13, rug14, rug15, rug16, rug17, rug18, rug19, rug20,
+            rug21, rug22, rug23, rug24, rug25, rug26, rug27, rug28, rug29, rug30,
+            rug31, rug32, rug33, rug34, rug35, rug36, rug37, rug38, rug39, rug40,
+            rug41, rug42, rug43, rug44, rug45, rug46, rug47, rug48, rug49, rug50
+        ];
+
+        allRugs.forEach(rug => {
+            let card = document.createElement('div');
+            card.className = 'p-card';
+            
+            // ✅ تم تغيير الرقم إلى 201002201639 ورسالة مخصصة
+            let msg = encodeURIComponent(
+                `أهلاً بكم في معرض الندي. أنا مهتم بشراء "${rug.name}" (اللون: ${rug.color})، مقاس ${rug.size}.`
+            );
+
+            card.innerHTML = `
+                <div class="p-img" style="background-image: url('${rug.img}');"></div>
+                <div class="p-info">
+                    <h3>${rug.name}</h3>
+                    <p>اللون: ${rug.color} | المقاس: ${rug.size}</p>
+                    <div class="price">${rug.price}</div>
+                    <a href="https://api.whatsapp.com/send?phone=201002201639&text=${msg}" target="_blank" class="wa-btn">
+                        <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
+                    </a>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>معرض الندي للسجاد</title>
+    <title>معرض الندي للسجاد | الموقع الرسمي</title>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -21,84 +21,100 @@
         body { background: var(--light-gray); color: var(--dark-text); scroll-behavior: smooth; }
         a { text-decoration: none; }
 
+        /* ===== البار العلوي ===== */
         nav {
             position: fixed; top: 0; width: 100%; background: var(--primary);
-            padding: 15px 40px; display: flex; justify-content: space-between; align-items: center;
+            padding: 12px 20px; display: flex; justify-content: space-between; align-items: center;
             z-index: 1000; box-shadow: 0 5px 25px rgba(0,0,0,0.6);
             border-bottom: 3px solid var(--secondary);
         }
-        .logo { font-size: 28px; font-weight: 900; color: var(--white); display: flex; align-items: center; gap: 12px; }
-        .logo i { color: var(--secondary); }
+        .logo { font-size: 20px; font-weight: 900; color: var(--white); display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--secondary); font-size: 18px; }
         .logo span { color: var(--secondary); }
 
-        .nav-links { display: flex; gap: 30px; align-items: center; }
-        .nav-links a { color: #d0e6f2; font-weight: 600; transition: 0.3s; font-size: 16px; }
+        .nav-links { display: flex; gap: 12px; align-items: center; }
+        .nav-links a { color: #d0e6f2; font-weight: 600; transition: 0.3s; font-size: 13px; }
         .nav-links a:hover { color: var(--secondary); }
 
+        /* ===== قسم الترحيب ===== */
         .hero {
-            height: 90vh; margin-top: 70px;
+            height: 80vh; margin-top: 55px;
             background: linear-gradient(rgba(5, 43, 71, 0.8), rgba(28, 198, 214, 0.3)),
                         url('https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=1600&auto=format&fit=crop');
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; color: var(--white); padding: 0 20px;
+            text-align: center; color: var(--white); padding: 0 15px;
         }
-        .hero h1 { font-size: 55px; font-weight: 900; margin-bottom: 20px; }
+        .hero h1 { font-size: 32px; font-weight: 900; margin-bottom: 15px; }
         .hero h1 span { color: var(--secondary); }
-        .hero p { font-size: 20px; max-width: 700px; margin: 0 auto 30px; line-height: 1.8; color: #e0f0f5; }
-        .btn-main { background: var(--secondary); padding: 15px 45px; border-radius: 50px; color: var(--primary); font-weight: 900; transition: 0.3s; display: inline-block; box-shadow: 0 5px 20px rgba(28, 198, 214, 0.4); }
+        .hero p { font-size: 15px; max-width: 100%; margin: 0 auto 20px; line-height: 1.6; color: #e0f0f5; }
+        .btn-main { background: var(--secondary); padding: 10px 30px; border-radius: 50px; color: var(--primary); font-weight: 900; transition: 0.3s; display: inline-block; box-shadow: 0 5px 20px rgba(28, 198, 214, 0.4); }
         .btn-main:hover { transform: scale(1.05); background: var(--white); }
 
-        .banner-promo { background: var(--primary); color: var(--secondary); padding: 15px; text-align: center; font-weight: bold; font-size: 18px; border-bottom: 2px solid var(--secondary); }
+        /* ===== لافتة العروض ===== */
+        .banner-promo { background: var(--primary); color: var(--secondary); padding: 10px; text-align: center; font-weight: bold; font-size: 14px; border-bottom: 2px solid var(--secondary); }
         
-        .sec-title { text-align: center; padding: 40px 0; }
-        .sec-title h2 { font-size: 40px; color: var(--primary); font-weight: 900; }
+        /* ===== العناوين ===== */
+        .sec-title { text-align: center; padding: 30px 10px; }
+        .sec-title h2 { font-size: 28px; color: var(--primary); font-weight: 900; }
         .sec-title h2 span { color: var(--secondary); }
-        .sec-title p { color: #666; font-size: 17px; margin-top: 10px; }
+        .sec-title p { color: #666; font-size: 14px; margin-top: 6px; }
 
+        /* ===== شبكة السجاد (الصور جنب بعضها) ===== */
         .rug-grid {
-            max-width: 1300px; margin: 0 auto; padding: 0 20px 60px;
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* عمودين للموبايل */
+            gap: 15px;
         }
         .p-card {
-            background: var(--white); border-radius: 15px; overflow: hidden;
+            background: var(--white); border-radius: 12px; overflow: hidden;
             box-shadow: var(--shadow); transition: 0.3s;
         }
-        .p-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-        .p-img { height: 300px; background-size: cover; background-position: center; }
-        .p-info { padding: 20px; text-align: center; }
-        .p-info h3 { color: var(--primary); margin-bottom: 10px; }
-        .p-info p { color: #777; font-size: 14px; }
-        .p-info .price { color: var(--secondary); font-size: 22px; font-weight: 900; }
-        .p-info .wa-btn { display: block; margin-top: 15px; background: #25D366; color: white; padding: 10px; border-radius: 30px; font-weight: bold; transition: 0.3s; }
+        .p-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+        .p-img { width: 100%; height: 180px; background-size: cover; background-position: center; }
+        .p-info { padding: 12px; text-align: center; }
+        .p-info h3 { color: var(--primary); margin-bottom: 6px; font-size: 16px; }
+        .p-info p { color: #777; font-size: 12px; }
+        .p-info .price { color: var(--secondary); font-size: 18px; font-weight: 900; }
+        .p-info .wa-btn { display: block; margin-top: 10px; background: #25D366; color: white; padding: 8px; border-radius: 30px; font-weight: bold; font-size: 13px; transition: 0.3s; }
         .p-info .wa-btn:hover { background: #1ebe5a; transform: scale(1.05); }
 
-        .features { background: var(--primary); padding: 60px 20px; color: white; text-align: center; }
-        .feat-grid { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
-        .feat-item { background: rgba(255,255,255,0.05); padding: 30px; border-radius: 20px; transition: 0.3s; }
-        .feat-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-5px); }
-        .feat-item i { font-size: 45px; color: var(--secondary); margin-bottom: 15px; }
-        .feat-item h4 { font-size: 20px; margin-bottom: 10px; }
-        .feat-item p { color: #cce0eb; font-size: 14px; line-height: 1.6; }
+        /* ===== المميزات ===== */
+        .features { background: var(--primary); padding: 35px 15px; color: white; text-align: center; }
+        .feat-grid { max-width: 100%; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .feat-item { background: rgba(255,255,255,0.05); padding: 15px; border-radius: 12px; transition: 0.3s; }
+        .feat-item:hover { background: rgba(255,255,255,0.15); transform: translateY(-3px); }
+        .feat-item i { font-size: 30px; color: var(--secondary); margin-bottom: 10px; }
+        .feat-item h4 { font-size: 16px; margin-bottom: 6px; }
+        .feat-item p { color: #cce0eb; font-size: 12px; line-height: 1.5; }
 
-        .contact-final-section { background: var(--white); padding: 60px 20px 80px; text-align: center; border-top: 4px solid var(--secondary); }
-        .contact-final-section h2 { font-size: 35px; color: var(--primary); margin-bottom: 30px; }
+        /* ===== التواصل ===== */
+        .contact-final-section { background: var(--white); padding: 40px 15px 50px; text-align: center; border-top: 4px solid var(--secondary); }
+        .contact-final-section h2 { font-size: 28px; color: var(--primary); margin-bottom: 20px; }
         .contact-final-section h2 span { color: var(--secondary); }
-        .social-final-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; max-width: 800px; margin: 0 auto; }
-        .final-btn { display: inline-flex; align-items: center; gap: 12px; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 18px; color: white; transition: 0.3s; width: 200px; justify-content: center; }
-        .final-btn:hover { transform: translateY(-5px) scale(1.05); }
+        .social-final-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; max-width: 100%; margin: 0 auto; }
+        .final-btn { display: inline-flex; align-items: center; gap: 10px; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 15px; color: white; transition: 0.3s; width: 100%; max-width: 280px; justify-content: center; }
+        .final-btn:hover { transform: translateY(-3px) scale(1.05); }
         .final-btn.whatsapp { background: #25D366; }
         .final-btn.facebook { background: #1877F2; }
         .final-btn.instagram { background: #E1306C; }
 
-        footer { background: #020617; padding: 30px; text-align: center; color: #94a3b8; border-top: 5px solid var(--secondary); }
+        /* ===== الفوتر ===== */
+        footer { background: #020617; padding: 20px; text-align: center; color: #94a3b8; border-top: 5px solid var(--secondary); }
         footer span { color: var(--secondary); font-weight: bold; }
+        footer p { font-size: 13px; }
 
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 35px; }
-            .nav-links a { font-size: 14px; }
-            .rug-grid { grid-template-columns: 1fr; }
-            .final-btn { width: 100%; max-width: 300px; }
+        /* ===== تعديل للشاشات الأكبر (3 و 4 أعمدة) ===== */
+        @media (min-width: 600px) {
+            .rug-grid { grid-template-columns: repeat(3, 1fr); }
+            .feat-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 900px) {
+            .rug-grid { grid-template-columns: repeat(4, 1fr); }
+            .feat-grid { grid-template-columns: repeat(4, 1fr); }
         }
     </style>
 </head>
@@ -116,7 +132,7 @@
 
     <header class="hero" id="home">
         <h1>معرض <span>الندي</span> للسجاد</h1>
-        <p>تشكيلة متجددة من أجود أنواع السجاد المبسوط على الأرضيات.</p>
+        <p>تشكيلة متجددة من أجود أنواع السجاد المبسوط على الأرضيات. اختر ما يناسب ذوقك.</p>
         <a href="#shop" class="btn-main">تصفح التشكيلة</a>
     </header>
 
@@ -127,7 +143,7 @@
     <section id="shop">
         <div class="sec-title">
             <h2>تشكيلة <span>الندي</span> المتجددة</h2>
-            <p>أكثر من 50 سجادة فاخرة (كل سجادة سطر لوحدها)</p>
+            <p>أكثر من 50 سجادة فاخرة تناسب جميع الأذواق</p>
         </div>
         <div class="rug-grid" id="rugContainer">
             <!-- السكربت هيولّد السجاد -->
@@ -147,9 +163,9 @@
 
     <section class="contact-final-section" id="contact">
         <h2>تواصل مع <span>معرض الندي</span></h2>
-        <p style="color: #666; margin-bottom: 30px;">يسعدنا خدمتك عبر جميع قنوات التواصل</p>
+        <p style="color: #666; margin-bottom: 20px;">يسعدنا خدمتك عبر جميع قنوات التواصل</p>
         <div class="social-final-icons">
-            <a href="https://wa.me/01002201639" target="_blank" class="final-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب</a>
+            <a href="https://wa.me/01006831317" target="_blank" class="final-btn whatsapp"><i class="fab fa-whatsapp"></i> واتساب</a>
             <a href="https://www.facebook.com" target="_blank" class="final-btn facebook"><i class="fab fa-facebook-f"></i> فيسبوك</a>
             <a href="https://www.instagram.com" target="_blank" class="final-btn instagram"><i class="fab fa-instagram"></i> إنستغرام</a>
         </div>
@@ -165,12 +181,12 @@
         // =============================================================
         // 50 سجادة (كل واحدة مكتوبة سطر لوحدها)
         // =============================================================
-        let rug1  = { name: "سجادة الندي ", color: "بنفسجي غامق", size: "3x2 متر", price: "p 1200 ", img: "rug2.jpg.jpg" };
-        let rug2  = { name: "سجادة اللاڤندر", color: "بنفسجي لافندر", size: "3.5x2.5 متر", price: "P 850", img: "rug3.jpg.jpg" };
-        let rug3  = { name: "سجادة القصر", color: "بنفسجي محروق", size: "3x4 متر", price: "p 4200", img: "rug4.jpg.jpg" };
+        let rug1  = { name: "سجادة التاج الملكي", color: "بنفسجي غامق", size: "3x2 متر", price: 2850, img: "rug2.jpg.jpg" };
+        let rug2  = { name: "سجادة اللاڤندر", color: "بنفسجي لافندر", size: "3.5x2.5 متر", price: 3800, img: "https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&w=800&auto=format&fit=crop" };
+        let rug3  = { name: "سجادة القصر", color: "بنفسجي محروق", size: "3x4 متر", price: 4200, img: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" };
         let rug4  = { name: "سجادة قصر الذهب", color: "بيج ذهبي", size: "2.5x3.5 متر", price: 3200, img: "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800&auto=format&fit=crop" };
         let rug5  = { name: "سجادة نقاء الفضاء", color: "أوف وايت", size: "2x3 متر", price: 2270, img: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800&auto=format&fit=crop" };
-        let rug6  = { name: "سجادة الشفق", color: "بيج فاتح", size: "2.5x2.5 متر", price: 1950, img: "rug2.jpg.jpg" };
+        let rug6  = { name: "سجادة الشفق", color: "بيج فاتح", size: "2.5x2.5 متر", price: 1950, img: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f1?q=80&w=800&auto=format&fit=crop" };
         let rug7  = { name: "سجادة المحيط", color: "أزرق زيتي", size: "2x3 متر", price: 2420, img: "https://images.unsplash.com/photo-1590264167088-e3b930657172?q=80&w=800&auto=format&fit=crop" };
         let rug8  = { name: "سجادة الأمواج", color: "أزرق فيروزي", size: "2.5x3.5 متر", price: 3100, img: "https://images.unsplash.com/photo-1618219740975-f40978ba6518?q=80&w=800&auto=format&fit=crop" };
         let rug9  = { name: "سجادة النيوترال", color: "رمادي بلاتيني", size: "2.5x2.5 متر", price: 1950, img: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800&auto=format&fit=crop" };
@@ -240,7 +256,7 @@
                     <h3>${rug.name}</h3>
                     <p>اللون: ${rug.color} | المقاس: ${rug.size}</p>
                     <div class="price">${rug.price}</div>
-                    <a href="https://wa.me/01002201639?text=${msg}" target="_blank" class="wa-btn">
+                    <a href="https://wa.me/01006831317?text=${msg}" target="_blank" class="wa-btn">
                         <i class="fab fa-whatsapp"></i> اطلب عبر واتساب
                     </a>
                 </div>
